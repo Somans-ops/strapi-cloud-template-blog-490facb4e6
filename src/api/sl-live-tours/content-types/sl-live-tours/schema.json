@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "sl_live_tours",
+  "info": {
+    "singularName": "sl-live-tours",
+    "pluralName": "sl-live-tour",
+    "displayName": "SL-Live-Tours"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    },
+    "rotationSpeed": {
+      "type": "integer",
+      "default": 3000
+    },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.live-tour-slide"
+    }
+  }
+}

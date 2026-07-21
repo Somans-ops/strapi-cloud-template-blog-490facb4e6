@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sl_offer_lists",
+  "info": {
+    "singularName": "sl-offer-list",
+    "pluralName": "sl-offer-lists",
+    "displayName": "SL-Offer-List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "promocode": {
+      "type": "string"
+    },
+    "openInNewTab": {
+      "type": "boolean"
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sl_offer_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sl-offer-detail.sl-offer-detail",
+      "inversedBy": "sl_offer_list"
+    },
+    "metaTags": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": true,
+      "required": true
+    },
+    "seoSchema": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

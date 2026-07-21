@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sl_today_deals",
+  "info": {
+    "singularName": "sl-today-deal",
+    "pluralName": "sl-today-deals",
+    "displayName": "SL-Today-Deal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.card-flight-block",
+        "shared.card-hotel-block"
+      ]
+    }
+  }
+}

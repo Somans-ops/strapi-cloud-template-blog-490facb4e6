@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sl_offer_details",
+  "info": {
+    "singularName": "sl-offer-detail",
+    "pluralName": "sl-offer-details",
+    "displayName": "SL-Offer-Detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sl_offer_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sl-offer-list.sl-offer-list",
+      "inversedBy": "sl_offer_detail"
+    },
+    "metaTags": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": true,
+      "required": true
+    },
+    "seoSchema": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

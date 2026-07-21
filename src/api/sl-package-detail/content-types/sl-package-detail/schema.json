@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sl_package_details",
+  "info": {
+    "singularName": "sl-package-detail",
+    "pluralName": "sl-package-details",
+    "displayName": "SL-Package-Detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "component",
+      "component": "shared.rich-text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "departureDates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-box"
+    },
+    "itineraryTitle": {
+      "type": "string"
+    },
+    "itineraryDays": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.itinerary-day"
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sl_package_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sl-package-list.sl-package-list",
+      "inversedBy": "sl_package_detail"
+    },
+    "metaTags": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": true,
+      "required": true
+    },
+    "seoSchema": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
+
+

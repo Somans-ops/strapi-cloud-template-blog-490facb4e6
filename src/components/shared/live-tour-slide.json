@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_live_tour_slides",
+  "info": {
+    "displayName": "Live Tour Slide"
+  },
+  "attributes": {
+
+    "city": {
+      "type": "string"
+    },
+
+    "cityTravellers": {
+      "type": "integer"
+    },
+
+    "totalTravellers": {
+      "type": "integer"
+    },
+
+    "highlightColor": {
+      "type": "string",
+      "default": "#f5a623"
+    }
+  }
+}

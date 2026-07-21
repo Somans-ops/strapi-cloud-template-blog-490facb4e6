@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sl_about_us",
+  "info": {
+    "singularName": "sl-about-us",
+    "pluralName": "sl-about-us-list",
+    "displayName": "SL-About-Us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "AboutSections": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.about-section",
+      "repeatable": true,
+      "required": false
+    },
+    "DetailSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.title-description",
+      "repeatable": true,
+      "required": false
+    },
+    "FamousPeople": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.famous-person",
+      "repeatable": true,
+      "required": false
+    },
+    "MetaTags": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": true,
+      "required": true
+    },
+    "seoSchema": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
+

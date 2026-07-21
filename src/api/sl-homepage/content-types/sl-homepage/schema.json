@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "sl_homepages",
+  "info": {
+    "singularName": "sl-homepage",
+    "pluralName": "sl-homepages",
+    "displayName": "SL-Homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "metaTags": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": true
+    },
+    "seoSchema": {
+      "type": "json",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
+

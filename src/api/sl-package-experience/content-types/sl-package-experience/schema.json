@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sl_package_experiences",
+  "info": {
+    "singularName": "sl-package-experience",
+    "pluralName": "sl-package-experiences",
+    "displayName": "SL-Package-Experience"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "packages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sl-package-list.sl-package-list",
+      "mappedBy": "experiences"
+    }
+  }
+}

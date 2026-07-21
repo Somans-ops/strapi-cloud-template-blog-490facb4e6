@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "sl_affiliations",
+  "info": {
+    "singularName": "sl-affiliation",
+    "pluralName": "sl-affiliations",
+    "displayName": "SL-Affiliation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
