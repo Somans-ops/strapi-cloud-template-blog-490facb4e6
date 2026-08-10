@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sl_package_regions",
+  "info": {
+    "singularName": "sl-package-region",
+    "pluralName": "sl-package-regions",
+    "displayName": "SL-Package-Region"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "packageType": {
+      "type": "enumeration",
+      "enum": ["Domestic", "International"]
+    },
+    "packages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sl-package-list.sl-package-list",
+      "mappedBy": "regions"
+    }
+  }
+}

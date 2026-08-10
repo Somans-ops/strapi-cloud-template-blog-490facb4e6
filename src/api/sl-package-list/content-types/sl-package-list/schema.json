@@ -11,101 +11,55 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-
+    "title": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "title" },
     "image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
-
-    "city": {
-      "type": "string"
-    },
-
-    "country": {
-      "type": "string"
-    },
-
-    "subtitle": {
-      "type": "string"
-    },
-
-    "price": {
-      "type": "decimal"
-    },
-
-    "reviewScore": {
-      "type": "decimal"
-    },
-
-    "reviewCount": {
-      "type": "integer"
-    },
-
-    "url": {
-      "type": "string"
-    },
-
+    "city": { "type": "string" },
+    "country": { "type": "string" },
+    "subtitle": { "type": "string" },
+    "price": { "type": "decimal" },
+    "reviewScore": { "type": "decimal" },
+    "reviewCount": { "type": "integer" },
+    "url": { "type": "string" },
     "packageType": {
       "type": "enumeration",
-      "enum": [
-        "Domestic",
-        "International"
-      ]
+      "enum": ["Domestic", "International"]
     },
-
-    "duration": {
-      "type": "enumeration",
-      "enum": [
-        "days_0_5",
-        "days_6_10",
-        "days_11_15",
-        "days_15_plus"
-      ]
+    "startDate": {
+      "type": "date"
     },
-
-    "experiences": {
+    "endDate": {
+      "type": "date"
+    },
+    "regions": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::sl-package-experience.sl-package-experience",
+      "target": "api::sl-package-region.sl-package-region",
       "inversedBy": "packages"
     },
-
     "sl_package_detail": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::sl-package-detail.sl-package-detail",
       "mappedBy": "sl_package_list"
     },
-
     "metaTags": {
       "type": "component",
       "component": "shared.seo",
       "repeatable": true,
       "required": true,
       "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
+        "i18n": { "localized": true }
       }
     },
-
     "seoSchema": {
       "type": "blocks",
       "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
+        "i18n": { "localized": true }
       }
     }
   }

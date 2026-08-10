@@ -1384,13 +1384,7 @@ export interface ApiSlPackageListSlPackageList
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    duration: Schema.Attribute.Enumeration<
-      ['days_0_5', 'days_6_10', 'days_11_15', 'days_15_plus']
-    >;
-    experiences: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::sl-package-experience.sl-package-experience'
-    >;
+    endDate: Schema.Attribute.Date;
     image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1408,6 +1402,10 @@ export interface ApiSlPackageListSlPackageList
     packageType: Schema.Attribute.Enumeration<['Domestic', 'International']>;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
+    regions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::sl-package-region.sl-package-region'
+    >;
     reviewCount: Schema.Attribute.Integer;
     reviewScore: Schema.Attribute.Decimal;
     seoSchema: Schema.Attribute.Blocks &
@@ -1421,12 +1419,48 @@ export interface ApiSlPackageListSlPackageList
       'api::sl-package-detail.sl-package-detail'
     >;
     slug: Schema.Attribute.UID<'title'>;
+    startDate: Schema.Attribute.Date;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiSlPackageRegionSlPackageRegion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'sl_package_regions';
+  info: {
+    displayName: 'SL-Package-Region';
+    pluralName: 'sl-package-regions';
+    singularName: 'sl-package-region';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sl-package-region.sl-package-region'
+    > &
+      Schema.Attribute.Private;
+    packages: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::sl-package-list.sl-package-list'
+    >;
+    packageType: Schema.Attribute.Enumeration<['Domestic', 'International']>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -2288,6 +2322,7 @@ declare module '@strapi/strapi' {
       'api::sl-package-detail.sl-package-detail': ApiSlPackageDetailSlPackageDetail;
       'api::sl-package-experience.sl-package-experience': ApiSlPackageExperienceSlPackageExperience;
       'api::sl-package-list.sl-package-list': ApiSlPackageListSlPackageList;
+      'api::sl-package-region.sl-package-region': ApiSlPackageRegionSlPackageRegion;
       'api::sl-package-tab.sl-package-tab': ApiSlPackageTabSlPackageTab;
       'api::sl-reviews-list.sl-reviews-list': ApiSlReviewsListSlReviewsList;
       'api::sl-static-content.sl-static-content': ApiSlStaticContentSlStaticContent;
