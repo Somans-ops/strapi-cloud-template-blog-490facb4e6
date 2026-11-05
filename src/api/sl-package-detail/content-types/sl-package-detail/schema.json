@@ -18,6 +18,9 @@
       "type": "component",
       "component": "shared.rich-text"
     },
+    "contentId": {
+    "type": "string"
+  },
     "slug": {
       "type": "uid",
       "targetField": "title"
